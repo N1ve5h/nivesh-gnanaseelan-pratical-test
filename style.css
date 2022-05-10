@@ -1,0 +1,289 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role=list],
+ol[role=list] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  -webkit-text-decoration-skip: ink;
+          text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+*::before,
+*::after {
+    -webkit-animation-duration: 0.01ms !important;
+            animation-duration: 0.01ms !important;
+    -webkit-animation-iteration-count: 1 !important;
+            animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+:root {
+  --purple: #7c3491;
+  --green: #34917c;
+  --darkgrey: #494948;
+  --sycamore: #917c34;
+}
+
+@font-face {
+  font-family: Roboto;
+  src: url("./fonts/Roboto-Regular.ttf");
+  font-weight: normal;
+}
+@font-face {
+  font-family: Roboto;
+  src: url("./fonts/Roboto-Bold.ttf");
+  font-weight: bold;
+}
+body {
+  font-family: "Roboto", sans-serif;
+  font-weight: normal;
+}
+body h1,
+body h2 {
+  font-weight: bold;
+}
+body h1 {
+  font-size: 20px;
+}
+@media only screen and (min-width: 1080px) {
+  body h1 {
+    font-size: 30px;
+  }
+}
+body h2 {
+  font-size: 18px;
+}
+@media only screen and (min-width: 1080px) {
+  body h2 {
+    font-size: 20px;
+  }
+}
+
+.title {
+  margin: 2em 0;
+  color: black;
+  text-align: center;
+}
+
+.locations {
+  width: 90%;
+  margin: 1.5rem auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+}
+.locations--borders {
+  border: 0.2em solid var(--purple);
+  border-radius: 1.2em;
+}
+.locations__locationdetailed {
+  display: flex;
+  flex-direction: column;
+}
+@media only screen and (min-width: 1080px) {
+  .locations__locationdetailed {
+    flex-direction: row;
+  }
+}
+.locations__locationdetailed__image {
+  width: 90%;
+  margin: 0.5em auto;
+  border-radius: 1.2em;
+}
+.locations__locationdetailed__text {
+  display: flex;
+  flex-direction: column;
+}
+.locations__locationdetailed__text__heading {
+  line-height: 3em;
+  margin-left: 1em;
+}
+.locations__locationdetailed__text__heading--darkgrey {
+  color: var(--darkgrey);
+}
+.locations__locationdetailed__text__p {
+  width: 90%;
+  margin-left: 1em;
+}
+.locations__locationdetailed__text__p--darkgrey {
+  color: var(--darkgrey);
+}
+@media only screen and (min-width: 1080px) {
+  .locations__locationdetailed__text__p {
+    font-size: 18px;
+  }
+}
+.locations__locationdetailed__text__btn {
+  width: 60%;
+  font-family: "Roboto", sans-serif;
+  font-weight: normal;
+  margin: 2em 0em 1em 1em;
+  padding: 0.3em 1.5em;
+  border-radius: 2em;
+  border: none;
+  transition-property: padding, font-size;
+  transition-duration: 0.5s;
+}
+.locations__locationdetailed__text__btn--backgroundgreen {
+  background-color: var(--green);
+  color: white;
+}
+.locations__locationdetailed__text__btn--hover:hover {
+  background-color: var(--sycamore);
+  color: white;
+  padding: 0.31em 1.7em;
+  font-size: 18px;
+}
+.locations__locationimage {
+  width: 100%;
+  height: 100vw;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.modal {
+  background-color: white;
+  width: 90%;
+  display: none;
+  position: fixed;
+  margin-left: 1em;
+  top: 40%;
+  left: 0.1em;
+  z-index: 1;
+  border: 0.1em solid black;
+  padding-bottom: 1em;
+}
+@media only screen and (min-width: 1080px) {
+  .modal {
+    width: 50%;
+    margin-left: 15em;
+  }
+}
+.modal__close {
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+.modal__p {
+  margin-top: 2em;
+  margin-bottom: 2em;
+  text-align: center;
+  font-weight: bold;
+}
+.modal__input {
+  margin-top: 1em;
+  margin-bottom: 2em;
+  margin-left: 2em;
+  border: 0.05em solid black;
+}
+@media only screen and (min-width: 1080px) {
+  .modal__input {
+    margin-left: 10.5em;
+  }
+}
+
+@media only screen and (min-width: 1080px) {
+  .locations {
+    display: grid;
+    grid-template-columns: repeat(4, 225px);
+    grid-template-rows: repeat(2, 225px);
+    gap: 1em;
+  }
+  .locations__locationdetailed:nth-of-type(1) {
+    grid-column-start: 0;
+    grid-column-end: 3;
+  }
+  .locations__locationdetailed {
+    grid-column: span 2;
+  }
+  .locations__locationdetailed__image {
+    width: 200px;
+  }
+  .locations__locationdetailed__text__heading {
+    line-height: 0em;
+    margin-top: 1.5em;
+  }
+  .locations__locationdetailed__text__p {
+    margin-top: 1em;
+  }
+  .locations__locationdetailed__text__btn {
+    margin: 0em 0em 0em 1em;
+    transition: none;
+    transition-delay: 0;
+  }
+  .locations__locationdetailed__text__btn--hover:hover {
+    padding: 0.3em 1.5em;
+    font-size: 16px;
+  }
+  .locations__locationdimage:nth-of-type(1) {
+    grid-column-start: 2;
+    grid-column-end: 3;
+  }
+  .locations__locationdimage:nth-of-type(2) {
+    grid-column-start: 2;
+    grid-column-end: 3;
+  }
+  .locations__locationimage {
+    grid-column: span 1;
+    grid-row: span 1;
+    height: 225px;
+  }
+}/*# sourceMappingURL=style.css.map */

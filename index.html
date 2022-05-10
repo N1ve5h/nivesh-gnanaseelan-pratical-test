@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Other locations</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="/jquery.js"></script>
+  </head>
+  <body>
+    <h1 class="title title--big title--bold">Other locations</h1>
+    <section class="locations">
+      <div class="locations__locationdetailed locations--borders">
+        <img
+          class="locations__locationdetailed__image"
+          src="./assets/card-1.jpg"
+          alt=""
+        />
+        <div class="locations__locationdetailed__text">
+          <h2
+            class="locations__locationdetailed__text__heading locations__locationdetailed__text__heading--darkgrey"
+          >
+            City of York
+          </h2>
+          <p class="locations__locationdetailed__text__p locations__locationdetailed__text__p--darkgrey">
+            Go see the old Cathedral city. Our guide, Mollie, will be happy to
+            tell you stories of the old streets on one of our walking tours.
+          </p>
+          <button class="locations__locationdetailed__text__btn locations__locationdetailed__text__btn--backgroundgreen locations__locationdetailed__text__btn--hover">
+            Read more
+          </button>
+        </div>
+      </div>
+      <img
+        class="locations__locationimage locations--borders"
+        src="./assets/card-2.jpg"
+        alt=""
+      />
+      <img
+        class="locations__locationimage locations--borders"
+        src="./assets/card-3.jpg"
+        alt=""
+      />
+      <img
+        class="locations__locationimage locations--borders"
+        src="./assets/card-4.jpg"
+        alt=""
+      />
+      <img
+        class="locations__locationimage locations--borders"
+        src="./assets/card-5.jpg"
+        alt=""
+      />
+      <div class="locations__locationdetailed locations--borders">
+        <img
+          class="locations__locationdetailed__image"
+          src="./assets/card-6.jpg"
+          alt=""
+        />
+        <div class="locations__locationdetailed__text">
+          <h2
+            class="locations__locationdetailed__text__heading locations__locationdetailed__text__heading--darkgrey"
+          >
+            Cornwall
+          </h2>
+          <p class="locations__locationdetailed__text__p locations__locationdetailed__text__p--darkgrey">
+            Go take a dip in the bliss that is the English sea, and enjoy all
+            Cornwall has to offer.
+          </p>
+          <button class="locations__locationdetailed__text__btn locations__locationdetailed__text__btn--backgroundgreen locations__locationdetailed__text__btn--hover">
+            Read more
+          </button>
+        </div>
+      </div>
+    </section>
+    <div class="modal">
+        <span class="modal__close">&times;</span>
+        <p class="modal__p">Hi, I'm <strong class="name">[enter name]</strong></p>
+        <input type="text" input="inputname" class="modal__input">
+    </div>
+    <script>
+        let hiddenModal = $('.modal');
+        $(".locations__locationdetailed__text__btn").on("click", () => {
+            hiddenModal.show();
+        });
+        $(".modal__close").on("click", () => {
+            hiddenModal.hide();
+        });
+        $(".modal__input").on("input", function () {
+            $('.name').html(`${$(this).val()}`);
+        });
+    </script>
+  </body>
+</html>
